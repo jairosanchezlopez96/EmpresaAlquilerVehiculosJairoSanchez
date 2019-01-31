@@ -59,7 +59,7 @@ public class Vehiculo {
         this.tarifa = tarifa;
     }
 
-    public boolean isDisponible() {
+    public boolean getDisponible() {
         return disponible;
     }
 
