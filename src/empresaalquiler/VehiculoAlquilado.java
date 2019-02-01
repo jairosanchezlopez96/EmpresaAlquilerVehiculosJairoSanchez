@@ -17,12 +17,12 @@ public class VehiculoAlquilado {
 
     private Cliente cliente;
     private Vehiculo vehiculo;
-    private LocalDate diaAlquiler;
+    private int diaAlquiler;
     private Month mesAlquiler;
     private int añoAlquiler;
     private int totalDiasAlquiler;
 
-    public VehiculoAlquilado(Cliente cliente, Vehiculo vehiculo, LocalDate diaAlquiler, Month mesAlquiler, int añoAlquiler, int totalDiasAlquiler) {
+    public VehiculoAlquilado(Cliente cliente, Vehiculo vehiculo, int diaAlquiler, Month mesAlquiler, int añoAlquiler, int totalDiasAlquiler) {
         this.cliente = cliente;
         this.vehiculo = vehiculo;
         this.diaAlquiler = diaAlquiler;
@@ -52,11 +52,11 @@ public class VehiculoAlquilado {
         this.vehiculo = vehiculo;
     }
 
-    public LocalDate getDiaAlquiler() {
+    public int getDiaAlquiler() {
         return diaAlquiler;
     }
 
-    public void setDiaAlquiler(LocalDate diaAlquiler) {
+    public void setDiaAlquiler(int diaAlquiler) {
         this.diaAlquiler = diaAlquiler;
     }
 

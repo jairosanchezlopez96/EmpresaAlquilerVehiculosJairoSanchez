@@ -153,22 +153,23 @@ cliente.*/
             System.out.println(clientes[i]);
         }
     }
-    public static LocalDate diaHoy
-        (){
-   
-        return LocalDate.now();
 
+    public static int diaHoy() {
 
-    
+        return LocalDate.now().getDayOfMonth();
+
     }
-     public static Month mesHoy(){
-  return LocalDate.now().getMonth();
-    
+
+    public static Month mesHoy() {
+        return LocalDate.now().getMonth();
+
     }
-   public static int añoHoy(){
-   
-   return LocalDate.now().getYear();
-   }
+
+    public static int añoHoy() {
+
+        return LocalDate.now().getYear();
+    }
+
     /*alquilarVehiculo(String matricula,String nif,int dias). Modifica
 la disponibilidad del vehículo para indicar que está alquilado y añade un objeto
 de tipo VehiculoAlquilado al array de vehículos alquilados. Para
