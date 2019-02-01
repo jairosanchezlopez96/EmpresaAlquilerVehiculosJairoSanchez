@@ -5,6 +5,10 @@
  */
 package empresaalquiler;
 
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.Year;
+
 /**
  *
  * @author jairo
@@ -13,12 +17,12 @@ public class VehiculoAlquilado {
 
     private Cliente cliente;
     private Vehiculo vehiculo;
-    private int diaAlquiler;
-    private int mesAlquiler;
+    private LocalDate diaAlquiler;
+    private Month mesAlquiler;
     private int añoAlquiler;
     private int totalDiasAlquiler;
 
-    public VehiculoAlquilado(Cliente cliente, Vehiculo vehiculo, int diaAlquiler, int mesAlquiler, int añoAlquiler, int totalDiasAlquiler) {
+    public VehiculoAlquilado(Cliente cliente, Vehiculo vehiculo, LocalDate diaAlquiler, Month mesAlquiler, int añoAlquiler, int totalDiasAlquiler) {
         this.cliente = cliente;
         this.vehiculo = vehiculo;
         this.diaAlquiler = diaAlquiler;
@@ -48,19 +52,19 @@ public class VehiculoAlquilado {
         this.vehiculo = vehiculo;
     }
 
-    public int getDiaAlquiler() {
+    public LocalDate getDiaAlquiler() {
         return diaAlquiler;
     }
 
-    public void setDiaAlquiler(int diaAlquiler) {
+    public void setDiaAlquiler(LocalDate diaAlquiler) {
         this.diaAlquiler = diaAlquiler;
     }
 
-    public int getMesAlquiler() {
+    public Month getMesAlquiler() {
         return mesAlquiler;
     }
 
-    public void setMesAlquiler(int mesAlquiler) {
+    public void setMesAlquiler(Month mesAlquiler) {
         this.mesAlquiler = mesAlquiler;
     }
 

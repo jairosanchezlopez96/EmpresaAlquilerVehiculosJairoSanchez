@@ -5,11 +5,13 @@
  */
 package empresaalquiler;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.Year;
 import java.time.YearMonth;
+import java.util.Date;
 
 /**
  *
@@ -151,26 +153,22 @@ cliente.*/
             System.out.println(clientes[i]);
         }
     }
-    public static int diaHoy
+    public static LocalDate diaHoy
         (){
    
-        int day = LocalDate.now();
-        return day;
-
+        return LocalDate.now();
 
 
     
     }
-     public static int mesHoy(){
-   int month =  YearMonth.now().getMonthValue();
-   return month;
+     public static Month mesHoy(){
+  return LocalDate.now().getMonth();
     
     }
-     public static  int añoHoy(){
-     int year = Year.now().getValue();
-     return year;
-    
-     }
+   public static int añoHoy(){
+   
+   return LocalDate.now().getYear();
+   }
     /*alquilarVehiculo(String matricula,String nif,int dias). Modifica
 la disponibilidad del vehículo para indicar que está alquilado y añade un objeto
 de tipo VehiculoAlquilado al array de vehículos alquilados. Para
