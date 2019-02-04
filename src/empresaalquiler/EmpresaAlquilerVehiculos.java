@@ -153,6 +153,14 @@ cliente.*/
             System.out.println(clientes[i]);
         }
     }
+    /*imprimirVehiculos(). Muestra el catálogo de vehículos de la empresa,
+recorriendo el array vehiculos y llamando al método getAtributos() de cada
+uno .*/
+public void imprimirVehiculos() {
+
+for (int i=0; i<this.totalVehiculos; i++)
+System.out.println(vehiculos[i]);
+}
 
     public static int diaHoy() {
 
