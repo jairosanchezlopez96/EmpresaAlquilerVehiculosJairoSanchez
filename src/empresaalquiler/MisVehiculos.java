@@ -44,8 +44,10 @@ easydrive.registrarVehiculo(new Vehiculo("4100 FUR", "Fiat", "Ducato",
 easydrive.imprimirClientes();
 // imprime el catálogo de vehículos de easydrive
 easydrive.imprimirVehiculos();
-
-        
+  Vehiculo v = Vehiculo.vehiculoAleatorio();
+        System.out.println(v);
+   Cliente c= Cliente.clienteAleatorio();
+        System.out.println(c);
     }
 
 }

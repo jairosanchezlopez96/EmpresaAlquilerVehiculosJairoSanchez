@@ -5,6 +5,8 @@
  */
 package empresaalquiler;
 
+import java.util.Random;
+
 /**
  *
  * @author jairo
@@ -80,6 +82,89 @@ public class Vehiculo {
         this.tarifa = tarifa;
         this.disponible = disponible;
     }
+    public static Vehiculo vehiculoAleatorio(){
+     String Matricula = "";
+        
+        Random rnd = new Random();
+        
+        for (int i = 0; i < 7; i++) {
+            
+            if (i < 4) {
+               
+                Matricula += rnd.nextInt(10);
+            }
+            else {
+                
+                Matricula += (char) (rnd.nextInt(90-65+1) + 65);
+            }
+        }
+        String Color = "";
+        
+        
+        
+        int numeroColor = rnd.nextInt(9);
+        
+        switch (numeroColor) {
+            case 0:
+                Color = "Blanco";
+                break;
+            case 1:
+                Color = "Negro";
+                break;
+            case 2:
+                Color = "Azul";
+                break;
+            case 3:
+                Color = "Amarrillo";
+                break;
+            case 4:
+                Color = "Morado";
+                break;
+            case 5:
+                Color = "Naranja";
+                break;
+            case 6:
+                Color = "Verde";
+                break;
+            case 7:
+                Color = "Rojo";
+                break;
+            case 8:
+                Color = "Cian";
+                break;     
+        }
+        double Tarifa;
+        
+        
+        
+        Tarifa =rnd.nextInt(150-100+1) + 100;
+        boolean disponibilidad;
+        
+       
+        
+        if (rnd.nextBoolean()){
+            disponibilidad = true;
+        }else{
+            disponibilidad = false;
+        }
+     String[]marca = {"Lexus","Ferrari","Maserrati","Ford","Renault","Seat","Fiat"};
+     String[]modelo ={"Marbella","Pianto","RSX300","Focus","Clio","Marbella"};
+     
+     String marcaElegido = marca[rnd.nextInt(marca.length)];
+     String modeloElegido = modelo[rnd.nextInt(modelo.length)];
+     
+     Vehiculo v = new Vehiculo ( Matricula, marcaElegido, modeloElegido,Color, Tarifa , disponibilidad);
+        return v;
+        
+    }
+    
+    
+ 
+   
+    
+    
+   
+
     
     
 }
