@@ -231,5 +231,18 @@ nif, int dias).*/
             this.totalAlquileres++;
         }
     }
+    public void rellenarCLientes(){
+    int clientesExistentes = this.totalClientes;
+    for (int i = 0 ; i < this.clientes.length-clientesExistentes; i++){
+    registrarCliente(Cliente.clienteAleatorio());
+    }
+    }
+    public void rellenarVehiculos(){
+    int vehiculosExistentes = this.totalVehiculos;
+    for (int i = 0 ; i < this.vehiculos.length-vehiculosExistentes; i++){
+    registrarVehiculo(Vehiculo.vehiculoAleatorio());
+    }
+    }
+    
 
 }
