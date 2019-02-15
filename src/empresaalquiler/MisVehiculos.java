@@ -55,6 +55,7 @@ easydrive.imprimirVehiculos();
    easydrive.ordenarClientes();
    easydrive.ordenarVehiculos();
    easydrive.imprimirClientes();
+   easydrive.imprimirVehiculos();
    easydrive.buscarCliente("00379468Z");
    easydrive.buscarVehiculos("2213XXXX");
     
