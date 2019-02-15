@@ -231,7 +231,7 @@ nif, int dias).*/
             this.totalAlquileres++;
         }
     }
-    public void rellenarCLientes(){
+    public void rellenarClientes(){
     int clientesExistentes = this.totalClientes;
     for (int i = 0 ; i < this.clientes.length-clientesExistentes; i++){
     registrarCliente(Cliente.clienteAleatorio());
@@ -243,6 +243,74 @@ nif, int dias).*/
     registrarVehiculo(Vehiculo.vehiculoAleatorio());
     }
     }
-    
+     public void ordenarClientes() {  
+      
+        Cliente temp;  
+         for(int i=0; i < clientes.length -1; i++){  
+                 for(int j= i+1; j < clientes.length; j++){  
+                          if(clientes[i].getNif().compareToIgnoreCase(clientes[j].getNif())> 0){  
+                                 //swap elements  
+                                 temp = clientes[i];  
+                                 clientes[i] = clientes[j];  
+                                 clientes[j] = temp;  
+                         }  
+                          
+                 }  
+         }  
 
+}           public void ordenarVehiculos( ){
+                Vehiculo temp;  
+         for(int i=0; i < vehiculos.length -1; i++){  
+                 for(int j= i+1; j < vehiculos.length; j++){  
+                          if(vehiculos[i].getMatricula().compareToIgnoreCase(vehiculos[j].getMatricula())> 0){  
+                                 //swap elements  
+                                 temp = vehiculos[i];  
+                                 vehiculos[i] = vehiculos[j];  
+                                 vehiculos[j] = temp;  
+                         }  
+                          
+                 }  
+         } 
+        }
+            public int buscarCliente( String buscado){
+            int mitad; int izquierda = 0; int derecha = clientes.length - 1;
+             boolean encontrado = false;
+        while ((izquierda<=derecha)&& (!encontrado)){
+    mitad = (izquierda + derecha) / 2;
+    if (clientes[mitad].getNif().compareTo(buscado) == 0){
+                encontrado = true;
+                 System.out.println("Lo ha encontrado en la posicion: " + mitad);
+            return mitad;
+        } else if (clientes[mitad].getNif().compareTo(buscado) >0){ 
+        derecha = mitad - 1;} //buscar en el trozo izquierdo
+        else if (clientes[mitad].getNif().compareTo(buscado  ) < 0){
+        izquierda = mitad + 1; // buscar en el trozo derecho
+    }
 }
+return -1;
+       
+
+            }
+                          public int buscarVehiculos( String buscado){
+            int mitad; int izquierda = 0; int derecha = clientes.length - 1;
+             boolean encontrado = false;
+        while ((izquierda<=derecha)&& (!encontrado)){
+    mitad = (izquierda + derecha) / 2;
+    if (vehiculos[mitad].getMatricula().compareTo(buscado) == 0){
+                encontrado = true;
+                 System.out.println("Lo ha encontrado en la posicion: " + mitad);
+            return mitad;
+        } else if (vehiculos[mitad].getMatricula().compareTo(buscado) >0){ 
+        derecha = mitad - 1;} //buscar en el trozo izquierdo
+        else if (vehiculos[mitad].getMatricula().compareTo(buscado  ) < 0){
+        izquierda = mitad + 1; // buscar en el trozo derecho
+    }
+}
+return -1;
+       
+
+            }
+
+
+
+   }
