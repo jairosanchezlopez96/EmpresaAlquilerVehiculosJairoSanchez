@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/*Penalización en la nota de dos puntos por no tabular el código*/
 package empresaalquiler;
 
 /**
