@@ -5,6 +5,7 @@
  */
 package empresaalquiler;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -55,8 +56,22 @@ public class Cliente {
     public static Cliente clienteAleatorio() {
         Random rnd = new Random();
 
-        String nombre[] = {"Pepe", "Ricardo", "Yoli", "Eduardo", "Manolo", "Felipe"};
-        String apellido[] = {"Sanchez", "Lopez", "Zubarte", "Payano", "Leon", "Montes"};
+       ArrayList<String> nombre  = new ArrayList<String>();
+   nombre.add("Pepe");
+    nombre.add("Luis");
+  nombre.add("Jose");
+    nombre.add("Ricardo");
+    nombre.add("Andres");
+    nombre.add("Ana");
+   
+   
+          ArrayList<String> apellido = new ArrayList<String>();
+   apellido.add("Sanchez");
+   apellido.add("Montes");
+  apellido.add("Leon");
+    apellido.add("Leon");
+   apellido.add("Regullon");
+    
 
         String nifrandom = "";
         int dni[] = new int[8];
@@ -144,12 +159,13 @@ public class Cliente {
 
         }
 
-        String nombreElegido = nombre[rnd.nextInt(nombre.length)];
+        String nombreElegido = nombre.get(rnd.nextInt(nombre.size()));
         System.out.println("Nombre: " + nombreElegido);
-        String apellidoElegido = apellido[rnd.nextInt(apellido.length)];
+        String apellidoElegido = apellido.get(rnd.nextInt(apellido.size()));
         System.out.println("Apellido: " + apellidoElegido);
         System.out.println("Nif :"+ letra);
         Cliente cliente = new Cliente(letra,nombreElegido,apellidoElegido);
         return cliente;
     }
+
 }
