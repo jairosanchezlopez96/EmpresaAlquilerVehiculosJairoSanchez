@@ -5,6 +5,7 @@
  */
 package empresaalquiler;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -69,7 +70,7 @@ public class Vehiculo {
         this.disponible = disponible;
     }
 
-@Override
+    @Override
     public String toString() {
         return "Vehiculo{" + "matricula=" + matricula + ", marca=" + marca + ", modelo=" + modelo + ", color=" + color + ", tarifa=" + tarifa + ", disponible=" + disponible + '}';
     }
@@ -82,28 +83,26 @@ public class Vehiculo {
         this.tarifa = tarifa;
         this.disponible = disponible;
     }
-    public static Vehiculo vehiculoAleatorio(){
-     String Matricula = "";
-        
+
+    public static Vehiculo vehiculoAleatorio() {
+        String Matricula = "";
+
         Random rnd = new Random();
-        
+
         for (int i = 0; i < 7; i++) {
-            
+
             if (i < 4) {
-               
+
                 Matricula += rnd.nextInt(10);
-            }
-            else {
-                
-                Matricula += (char) (rnd.nextInt(90-65+1) + 65);
+            } else {
+
+                Matricula += (char) (rnd.nextInt(90 - 65 + 1) + 65);
             }
         }
         String Color = "";
-        
-        
-        
+
         int numeroColor = rnd.nextInt(9);
-        
+
         switch (numeroColor) {
             case 0:
                 Color = "Blanco";
@@ -131,40 +130,42 @@ public class Vehiculo {
                 break;
             case 8:
                 Color = "Cian";
-                break;     
+                break;
         }
         double Tarifa;
-        
-        
-        
-        Tarifa =rnd.nextInt(150-100+1) + 100;
+
+        Tarifa = rnd.nextInt(150 - 100 + 1) + 100;
         boolean disponibilidad;
-        
-       
-        
-        if (rnd.nextBoolean()){
+
+        if (rnd.nextBoolean()) {
             disponibilidad = true;
-        }else{
+        } else {
             disponibilidad = false;
         }
-     String[]marca = {"Lexus","Ferrari","Maserrati","Ford","Renault","Seat","Fiat"};
-     String[]modelo ={"Marbella","Pianto","RSX300","Focus","Clio","Marbella"};
-     
-     String marcaElegido = marca[rnd.nextInt(marca.length)];
-     String modeloElegido = modelo[rnd.nextInt(modelo.length)];
-     
-     Vehiculo v = new Vehiculo ( Matricula, marcaElegido, modeloElegido,Color, Tarifa , disponibilidad);
-        return v;
-        
-    }
-    
-    
- 
-   
-    
-    
-   
+        ArrayList<String> marcas = new ArrayList<String>();
+        marcas.add("Lexus");
+        marcas.add("Ferrari");
+        marcas.add("Maserrati");
+        marcas.add("Ford");
+        marcas.add("Citroen");
+        marcas.add("Seat");
+        marcas.add("Renault");
 
-    
-    
+        ArrayList<String> modelo = new ArrayList<String>();
+        modelo.add("Marbella");
+        modelo.add("Clio");
+        modelo.add("RSX300");
+        modelo.add("Focus");
+        modelo.add("Cactus");
+        modelo.add("Punto");
+        modelo.add("Renault");
+
+        String marcaElegido = marcas.get(rnd.nextInt(marcas.size()));
+        String modeloElegido = modelo.get(rnd.nextInt(modelo.size()));
+
+        Vehiculo v = new Vehiculo(Matricula, marcaElegido, modeloElegido, Color, Tarifa, disponibilidad);
+        return v;
+
+    }
+
 }
